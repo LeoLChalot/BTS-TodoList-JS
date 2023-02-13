@@ -34,7 +34,8 @@ h1{
 	border: none;
 	outline: none;
 }
-#todo-input #btn-add {
+#todo-input #btn-add,
+#todo-input #filter{
 	padding: 0.7em 1.4em;
 	outline: none;
 	border: none;
@@ -69,7 +70,6 @@ h1{
 .delete {
 	background: red;
 }
-
 .checked p {
 	text-decoration: line-through;
 	font-weight: bold;

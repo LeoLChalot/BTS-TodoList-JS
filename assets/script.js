@@ -2,10 +2,11 @@ let arrayTodo = [];
 let todoOutput = document.getElementById("todo-output");
 let todoInput = document.getElementById("input");
 let btnAdd = document.getElementById("btn-add");
+let dropdownFilter = document.getElementsByClassName("option");
 
 function close() {
-	var close = document.getElementsByClassName("delete");
-	var i;
+	let close = document.getElementsByClassName("delete");
+	let i;
 	for (i = 0; i < close.length; i++) {
 		close[i].onclick = function () {
 			var div = this.parentElement;
@@ -14,8 +15,8 @@ function close() {
 	}
 }
 function check() {
-	var check = document.getElementsByClassName("check");
-	var j;
+	let check = document.getElementsByClassName("check");
+	let j;
 	for (j = 0; j < check.length; j++) {
 		check[j].onclick = function () {
 			var div = this.parentElement;
@@ -23,9 +24,14 @@ function check() {
 		};
 	}
 }
+function filter(event) {
+  // console.log(event.target.value);
+  let element = event.target.child;
+  console.log(element);
+}
 function addTodo() {
 	arrayTodo.push(todoInput.value);
-	if (todoInput.value != '') {
+	if (todoInput.value != "") {
 		let todoCard = document.createElement("li");
 		let todoP = document.createElement("p");
 		let btnCheck = document.createElement("button");
@@ -45,3 +51,4 @@ function addTodo() {
 	}
 }
 btnAdd.addEventListener("click", addTodo);
+dropdownFilter.addEventListener("click", filter);
